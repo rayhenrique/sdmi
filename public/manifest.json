@@ -1,7 +1,7 @@
 {
-    "name": "SDMI - Secretaria da Mulher e do Idoso",
+    "name": "SDMI - Secretaria dos Direitos da Mulher e do Idoso",
     "short_name": "SDMI",
-    "description": "Sistema de Gestão de Atendimentos - Secretaria Municipal da Mulher e do Idoso",
+    "description": "Sistema de Gestão de Atendimentos - Secretaria dos Direitos da Mulher e do Idoso",
     "start_url": "/",
     "display": "standalone",
     "orientation": "portrait",
