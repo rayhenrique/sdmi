@@ -4,7 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Favicon & PWA -->
         <link rel="icon" type="image/png" href="/logo-sdmi2.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="theme-color" content="#7c3aed">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-title" content="SDMI">
+        <link rel="apple-touch-icon" href="/logo-sdmi2.png">
+
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
@@ -19,5 +28,20 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+
+        <!-- Service Worker Registration -->
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then((registration) => {
+                            console.log('SW registrado:', registration.scope);
+                        })
+                        .catch((error) => {
+                            console.log('SW falhou:', error);
+                        });
+                });
+            }
+        </script>
     </body>
 </html>
